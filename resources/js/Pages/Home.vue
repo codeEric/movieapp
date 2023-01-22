@@ -1,7 +1,5 @@
 <template>
-  <h1>Movie app</h1>
+  <h1>Home</h1>
 </template>
 
 <script setup></script>
-
-<style></style>

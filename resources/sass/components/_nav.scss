@@ -1,0 +1,26 @@
+@use '../core/variables' as var;
+
+.nav-list {
+  display: flex;
+
+  .nav-list-item:not(:first-child) {
+    margin-left: 3rem;
+  }
+
+  .active-nav-link {
+    color: var.$primary-color;
+    position: relative;
+
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 1.5rem;
+      right: 50%;
+      transform: translateX(50%);
+      width: 1.35rem;
+      height: 0.35rem;
+      background-color: var.$primary-color;
+    }
+  }
+}

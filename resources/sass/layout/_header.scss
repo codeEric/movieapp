@@ -1,0 +1,23 @@
+@use '../core/variables' as var;
+@use '../components/nav';
+
+.header {
+  height: 5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var.$white;
+  background-color: var.$header-color;
+  padding: 0 2.2rem;
+  font-size: 1.1rem;
+
+  .title {
+    font-size: 1.55rem;
+  }
+}
+
+.header-auth-container {
+  .register {
+    margin-left: 2rem;
+  }
+}

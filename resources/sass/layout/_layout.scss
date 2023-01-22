@@ -1,0 +1,18 @@
+@use './header';
+@use '../core/variables' as var;
+
+body {
+  font-family: var.$font-family;
+}
+
+#app {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+section {
+  background-color: var.$bg-color;
+  flex: 1;
+  color: var.$white;
+}
