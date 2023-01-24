@@ -1,0 +1,43 @@
+@mixin carousel-width() {
+  $gap-size: 2.5rem;
+  @media screen and (max-width: 576px) {
+    $img-count: 2;
+    flex: 0 0
+      calc((100% / $img-count) - (($img-count - 1) * $gap-size / $img-count));
+    max-width: calc(
+      (100% / $img-count) - (($img-count - 1) * $gap-size / $img-count)
+    );
+  }
+  @media screen and (min-width: 576px) {
+    $img-count: 2;
+    flex: 0 0
+      calc((100% / $img-count) - (($img-count - 1) * $gap-size / $img-count));
+    max-width: calc(
+      (100% / $img-count) - (($img-count - 1) * $gap-size / $img-count)
+    );
+  }
+  @media screen and (min-width: 768px) {
+    $img-count: 3;
+    flex: 0 0
+      calc((100% / $img-count) - (($img-count - 1) * $gap-size / $img-count));
+    max-width: calc(
+      (100% / $img-count) - (($img-count - 1) * $gap-size / $img-count)
+    );
+  }
+  @media screen and (min-width: 992px) {
+    $img-count: 4;
+    flex: 0 0
+      calc((100% / $img-count) - (($img-count - 1) * $gap-size / $img-count));
+    max-width: calc(
+      (100% / $img-count) - (($img-count - 1) * $gap-size / $img-count)
+    );
+  }
+  @media screen and (min-width: 1200px) {
+    $img-count: 6;
+    flex: 0 0
+      calc((100% / $img-count) - (($img-count - 1) * $gap-size / $img-count));
+    max-width: calc(
+      (100% / $img-count) - (($img-count - 1) * $gap-size / $img-count)
+    );
+  }
+}

@@ -13,9 +13,10 @@
         "vite": "^4.0.0"
     },
     "dependencies": {
+        "@coreui/icons": "^2.1.0",
+        "@coreui/icons-vue": "^2.0.0",
         "@inertiajs/vue3": "^1.0.0",
         "@vitejs/plugin-vue": "^4.0.0",
-        "boxicons": "^2.1.4",
         "vue": "^3.2.36"
     }
 }

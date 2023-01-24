@@ -1,6 +1,7 @@
 <template>
   <h1>Home</h1>
   <Carousel title="Trending" :data="data" />
+  <Carousel title="Popular" :data="data" />
 </template>
 
 <script setup>
@@ -53,6 +54,54 @@ const data = [
   },
   {
     name: 'Image12',
+    img: 'https://source.unsplash.com/all/1280x720?film',
+  },
+  {
+    name: 'Image13',
+    img: 'https://source.unsplash.com/all/1280x720?film',
+  },
+  {
+    name: 'Image14',
+    img: 'https://source.unsplash.com/all/1280x720?film',
+  },
+  {
+    name: 'Image15',
+    img: 'https://source.unsplash.com/all/1280x720?film',
+  },
+  {
+    name: 'Image16',
+    img: 'https://source.unsplash.com/all/1280x720?film',
+  },
+  {
+    name: 'Image17',
+    img: 'https://source.unsplash.com/all/1280x720?film',
+  },
+  {
+    name: 'Image18',
+    img: 'https://source.unsplash.com/all/1280x720?film',
+  },
+  {
+    name: 'Image19',
+    img: 'https://source.unsplash.com/all/1280x720?film',
+  },
+  {
+    name: 'Image20',
+    img: 'https://source.unsplash.com/all/1280x720?film',
+  },
+  {
+    name: 'Image21',
+    img: 'https://source.unsplash.com/all/1280x720?film',
+  },
+  {
+    name: 'Image22',
+    img: 'https://source.unsplash.com/all/1280x720?film',
+  },
+  {
+    name: 'Image23',
+    img: 'https://source.unsplash.com/all/1280x720?film',
+  },
+  {
+    name: 'Image24',
     img: 'https://source.unsplash.com/all/1280x720?film',
   },
 ];

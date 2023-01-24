@@ -1,22 +1,24 @@
 @use '../core/variables' as var;
+@use '../core/mixins' as mix;
+
+$img-count: 4;
+$gap-size: 2.5rem;
 
 .carousel-container {
-  height: 368px;
+  height: 25vh;
   position: relative;
 }
 
 .carousel-list {
   position: relative;
   display: flex;
-  align-items: center;
+  flex-grow: 1;
   overflow: hidden;
-  height: 218px;
-  gap: 3.16rem;
+  gap: $gap-size;
 
   li {
-    flex-shrink: 0;
-    width: 411px;
-    height: 100%;
+    @include mix.carousel-width();
+    aspect-ratio: 16 / 9;
     transition: transform 0.2s ease-in-out;
   }
 
@@ -25,9 +27,8 @@
   }
 
   img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 18px;
+    width: 100%;
+    border-radius: 1.3rem;
     object-fit: cover;
   }
 }
@@ -36,8 +37,8 @@
 .corousel-btn-right {
   position: absolute;
   top: 0;
-  width: 2.2rem;
-  height: 218px;
+  width: 1.8rem;
+  height: 100%;
   background-color: rgba(0, 0, 0, 0.3);
   transition: background-color 0.15s ease-in;
   cursor: pointer;
@@ -49,10 +50,4 @@
 
 .corousel-btn-right {
   right: 0;
-  border-radius: 0 18px 18px 0;
-}
-
-.corousel-btn-left {
-  left: 0;
-  border-radius: 18px 0 0 18px;
 }
