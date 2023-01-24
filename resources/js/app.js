@@ -1,6 +1,7 @@
 import { createApp, h } from 'vue';
 import { createInertiaApp } from '@inertiajs/vue3';
 import Layout from './Shared/Layout.vue';
+import { iconsSet } from '../assets/icons';
 
 createInertiaApp({
   resolve: (name) => {
@@ -12,6 +13,7 @@ createInertiaApp({
   setup({ el, App, props, plugin }) {
     createApp({ render: () => h(App, props) })
       .use(plugin)
+      .provide('icons', iconsSet)
       .mount(el);
   },
 });

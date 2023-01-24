@@ -7,10 +7,10 @@
         <img :src="item.img" :alt="item.name" />
       </li>
       <button class="corousel-btn-left" @click="prevPage">
-        <CIcon :icon="cilChevronLeft" />
+        <CIcon icon="cilChevronLeft" />
       </button>
       <button class="corousel-btn-right" @click="nextPage">
-        <CIcon :icon="cilChevronRight" />
+        <CIcon icon="cilChevronRight" />
       </button>
     </ul>
   </div>
@@ -18,7 +18,6 @@
 
 <script setup>
 import { CIcon } from '@coreui/icons-vue';
-import { cilChevronLeft, cilChevronRight } from '@coreui/icons';
 import { ref, reactive, onMounted, onUnmounted } from 'vue';
 
 const props = defineProps({ title: String, data: Array });
