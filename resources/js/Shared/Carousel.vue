@@ -50,7 +50,6 @@ const prevPage = () => {
 
 const getDimensions = () => {
   const pageWidth = window.innerWidth;
-  console.log(pageWidth >= 992);
 
   if (pageWidth >= 1200) {
     imgPerPage = 6;
