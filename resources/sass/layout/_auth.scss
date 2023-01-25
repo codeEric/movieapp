@@ -38,11 +38,11 @@
   label {
     font-size: 0.8rem;
     margin-bottom: 0.5rem;
-    color: #dbdbdb;
+    color: var.$light-gray;
   }
 
   input {
-    border: 1px solid #dbdbdb;
+    border: 1px solid var.$light-gray;
     border-radius: 0.4rem;
     height: 2.4rem;
     padding: 0 0.8rem;

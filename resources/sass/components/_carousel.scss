@@ -18,18 +18,54 @@ $gap-size: 2.5rem;
 
   li {
     @include mix.carousel-width();
-    aspect-ratio: 16 / 9;
     transition: transform 0.2s ease-in-out;
-  }
-
-  p {
-    position: absolute;
+    cursor: pointer;
   }
 
   img {
     width: 100%;
+    min-height: 100%;
     border-radius: 1.3rem;
     object-fit: cover;
+  }
+}
+
+.carousel-overlay {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.31);
+  border-radius: 1.3rem;
+  z-index: 3;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+
+  .carousel-info {
+    position: absolute;
+    bottom: 0;
+    padding: 0.5rem;
+    p {
+      text-transform: uppercase;
+      color: var.$light-gray;
+      font-size: 0.75rem;
+    }
+
+    svg {
+      height: 0.75rem;
+      padding-left: 0.2rem;
+      padding-right: 0.1rem;
+    }
+
+    p.carousel-movie-title {
+      color: var.$white;
+      font-size: 1.1rem;
+      letter-spacing: 0.2rem;
+      margin-top: 0.5rem;
+    }
   }
 }
 

@@ -3,7 +3,17 @@
     <h1>{{ title }}</h1>
     <ul class="carousel-list">
       <li v-for="item in data" :style="st" ref="itemRefs">
-        <p>{{ item.name }}</p>
+        <div class="carousel-overlay">
+          <div class="carousel-info">
+            <p>
+              {{ item.releaseYear }} &#8226;
+              <CIcon icon="cilMovie" v-if="item.type === 'Movie'" />
+              <CIcon icon="cilTv" v-else />
+              {{ item.type }}
+            </p>
+            <p class="carousel-movie-title">{{ item.name }}</p>
+          </div>
+        </div>
         <img :src="item.img" :alt="item.name" />
       </li>
       <button class="corousel-btn-left" @click="prevPage">
