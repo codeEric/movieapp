@@ -1,5 +1,6 @@
 @use './header';
 @use '../core/variables' as var;
+@use '../core/mixins' as mix;
 
 body {
   font-family: var.$font-family;
@@ -8,8 +9,7 @@ body {
 
 #app {
   height: 100%;
-  display: flex;
-  flex-direction: column;
+  @include mix.flex-column;
 }
 
 section {

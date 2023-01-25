@@ -23,3 +23,7 @@ Route::get('/watch-later', function () {
 Route::get('/favorites', function () {
     return Inertia::render('Favorites');
 });
+
+Route::get('/login', function () {
+    return Inertia::render('Auth/Login');
+});
