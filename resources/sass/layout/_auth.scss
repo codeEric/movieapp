@@ -1,7 +1,7 @@
 @use '../core/variables' as var;
 @use '../core/mixins' as mix;
 
-.login-container {
+.auth-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -9,12 +9,12 @@
   height: 100%;
 }
 
-.login-title {
+.auth-title {
   margin-bottom: 3rem;
   font-weight: bold;
 }
 
-.login-form {
+.auth-form {
   button {
     text-align: center;
     background-color: var.$primary-color;
@@ -49,7 +49,7 @@
   }
 }
 
-.login-no-account {
+.auth-account-subtxt {
   font-size: 0.9rem;
   margin-top: 1.2rem;
   a {
