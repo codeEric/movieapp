@@ -1,9 +1,11 @@
 <?php
 
+use App\Services\TmdbService;
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
+Route::get('/', function (TmdbService $tmdbService) {
+    $data = $tmdbService->movies()->getPopular();
     return Inertia::render('Home');
 });
 

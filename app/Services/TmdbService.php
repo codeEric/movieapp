@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use App\Services\Resources\MovieResource;
 use App\Services\Concerns\BuildBaseRequest;
 use App\Services\Concerns\CanSendGetRequest;
 
@@ -18,5 +19,13 @@ class TmdbService
   {
     $this->baseUrl = $baseUrl;
     $this->apiKey = $apiKey;
+  }
+
+  public function movies(): MovieResource
+  {
+    return new MovieResource(
+      service: $this,
+      apiKey: $this->apiKey
+    );
   }
 }
