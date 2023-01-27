@@ -5,7 +5,8 @@ use Inertia\Inertia;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function (TmdbService $tmdbService) {
-    $data = $tmdbService->movies()->getPopular();
+    $data = $tmdbService->movies()->getWeeklyTrending();
+
     return Inertia::render('Home');
 });
 
