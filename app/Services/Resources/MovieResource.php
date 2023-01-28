@@ -4,9 +4,9 @@
 namespace App\Services\Resources;
 
 use App\Services\TmdbService;
-use Faker\Core\Number;
 use Illuminate\Http\Client\Response;
-use Ramsey\Uuid\Type\Integer;
+
+use App\Services\DataObjects\Movie;
 
 class MovieResource
 {
@@ -20,11 +20,12 @@ class MovieResource
     $this->apiKey = $apiKey;
   }
 
-  public function getPopular(): Response
+  public function getPopular(int $page = 1): Response
   {
     return $this->service->get(
       request: $this->service->buildRequestWithoutToken(),
       url: "/movie/popular",
+      page: $page,
       apiKey: $this->apiKey
     );
   }
@@ -48,12 +49,12 @@ class MovieResource
     }
   }
 
-  public function getDailyTrending(int $page): Response
+  public function getDailyTrending(int $page = 1): Response
   {
     return $this->getTrending('day', $page);
   }
 
-  public function getWeeklyTrending(int $page): Response
+  public function getWeeklyTrending(int $page = 1): Response
   {
     return $this->getTrending('week', $page);
   }

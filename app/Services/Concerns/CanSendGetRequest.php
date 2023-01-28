@@ -7,7 +7,7 @@ use Illuminate\Http\Client\Response;
 
 trait CanSendGetRequest
 {
-  public function get(PendingRequest $request, string $url, int $page = 1, $apiKey = null): Response
+  public function get(PendingRequest $request, string $url, int $page, $apiKey = null): Response
   {
     if ($apiKey) {
       return $request->get(
