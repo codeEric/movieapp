@@ -4,7 +4,9 @@
 namespace App\Services\Resources;
 
 use App\Services\TmdbService;
+use Faker\Core\Number;
 use Illuminate\Http\Client\Response;
+use Ramsey\Uuid\Type\Integer;
 
 class MovieResource
 {
@@ -27,30 +29,32 @@ class MovieResource
     );
   }
 
-  private function getTrending(string $time_window): Response
+  private function getTrending(string $time_window, int $page): Response
   {
     if ($time_window === 'day') {
       return $this->service->get(
         request: $this->service->buildRequestWithoutToken(),
         url: "/trending/all/{$time_window}",
+        page: $page,
         apiKey: $this->apiKey
       );
     } else {
       return $this->service->get(
         request: $this->service->buildRequestWithoutToken(),
         url: "/trending/all/{$time_window}",
+        page: $page,
         apiKey: $this->apiKey
       );
     }
   }
 
-  public function getDailyTrending(): Response
+  public function getDailyTrending(int $page): Response
   {
-    return $this->getTrending('day');
+    return $this->getTrending('day', $page);
   }
 
-  public function getWeeklyTrending(): Response
+  public function getWeeklyTrending(int $page): Response
   {
-    return $this->getTrending('week');
+    return $this->getTrending('week', $page);
   }
 }

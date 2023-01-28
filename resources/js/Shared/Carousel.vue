@@ -6,15 +6,18 @@
         <div class="carousel-overlay">
           <div class="carousel-info">
             <p>
-              {{ item.releaseYear }} &#8226;
-              <CIcon icon="cilMovie" v-if="item.type === 'Movie'" />
+              {{ item.release_date ?? item.first_air_date }}
+              &#8226;
+              <CIcon icon="cilMovie" v-if="item.media_type === 'movie'" />
               <CIcon icon="cilTv" v-else />
-              {{ item.type }}
+              {{ item.media_type }}
             </p>
-            <p class="carousel-movie-title">{{ item.name }}</p>
+            <p class="carousel-movie-title">{{ item.name ?? item.title }}</p>
           </div>
         </div>
-        <img :src="item.img" :alt="item.name" />
+        <img
+          :src="'https://image.tmdb.org/t/p/original/' + item.backdrop_path"
+          :alt="item.name" />
       </li>
       <button class="corousel-btn-left" @click="prevPage">
         <CIcon icon="cilChevronLeft" />

@@ -1,14 +1,10 @@
 <?php
 
-use App\Services\TmdbService;
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 
-Route::get('/', function (TmdbService $tmdbService) {
-    $data = $tmdbService->movies()->getWeeklyTrending();
-
-    return Inertia::render('Home');
-});
+Route::get('/', [HomeController::class, 'index']);
 
 Route::get('/movies', function () {
     return Inertia::render('Movies');

@@ -1,11 +1,15 @@
 <template>
   <h1>Home</h1>
-  <Carousel title="Trending" :data="data" />
-  <Carousel title="Popular" :data="data" />
+  <Carousel title="Trending" :data="trendingMovies" />
+  <Carousel title="Popular movies" :data="popularMovies" />
 </template>
 
 <script setup>
 import Carousel from '../Shared/Carousel.vue';
+
+const props = defineProps({ popularMovies: Object, trendingMovies: Object });
+
+console.log(props.popularMovies);
 
 const data = [
   {
