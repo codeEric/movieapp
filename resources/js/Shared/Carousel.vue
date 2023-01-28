@@ -16,7 +16,7 @@
           </div>
         </div>
         <img
-          :src="'https://image.tmdb.org/t/p/original/' + item.backdrop_path"
+          :src="'https://image.tmdb.org/t/p/w500/' + item.backdrop_path"
           :alt="item.name" />
       </li>
       <button class="corousel-btn-left" @click="prevPage">
