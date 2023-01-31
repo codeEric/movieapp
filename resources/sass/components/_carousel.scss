@@ -7,6 +7,12 @@ $gap-size: 2.5rem;
 .carousel-container {
   height: 25vh;
   position: relative;
+  margin: 2rem 0;
+}
+
+.carousel-title {
+  margin-bottom: 0.8rem;
+  font-size: 2rem;
 }
 
 .carousel-list {

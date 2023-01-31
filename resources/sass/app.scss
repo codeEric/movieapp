@@ -1,6 +1,7 @@
 @use './core/reset';
 @use './layout/layout';
 @use './layout/auth';
+@use './layout/home';
 @use './components/carousel';
 h1 {
   font-size: 42px;

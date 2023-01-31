@@ -1,8 +1,21 @@
 <template>
-  <h1>Home</h1>
-  <Carousel title="Popular movies" :data="popularMovies" />
-  <Carousel title="Daily trending" :data="trendingMoviesDaily" />
-  <Carousel title="Weekly trending" :data="trendingMoviesWeekly" />
+  <div class="home-header-container">
+    <h1 class="home-header-txt">A place to find new movies and tv shows</h1>
+    <input
+      type="text"
+      class="home-header-search"
+      placeholder="Search here..." />
+    <div class="home-header-overlay"></div>
+    <img
+      class="home-header"
+      :src="trendingMoviesDaily[0].backdropOriginal"
+      alt="" />
+  </div>
+  <section class="home-carousel-section">
+    <Carousel title="Daily trending" :data="trendingMoviesDaily" />
+    <Carousel title="Weekly trending" :data="trendingMoviesWeekly" />
+    <Carousel title="Popular movies" :data="popularMovies" />
+  </section>
 </template>
 
 <script setup>
@@ -162,4 +175,11 @@ const data = [
     img: 'https://source.unsplash.com/all/1280x720?film',
   },
 ];
+</script>
+
+<script>
+import HomeLayout from '../Shared/HomeLayout.vue';
+export default {
+  layout: HomeLayout,
+};
 </script>

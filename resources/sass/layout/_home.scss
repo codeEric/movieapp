@@ -1,0 +1,47 @@
+@use '../core/mixins' as mix;
+@use '../core/variables' as var;
+
+.home-header-container {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+}
+
+.home-header-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 15;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.home-header-txt {
+  position: absolute;
+  z-index: 20;
+  left: 7%;
+  font-size: 2rem;
+  top: 20%;
+}
+
+.home-header-search {
+  position: absolute;
+  z-index: 20;
+  width: 30%;
+  height: 7%;
+  left: 50%;
+  bottom: 20%;
+  padding-left: 1rem;
+  transform: translateX(-50%);
+  border-radius: 0.5rem;
+  border: 1px solid var.$white;
+}
+
+.home-header {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.home-carousel-section {
+  @include mix.layout-section-padding;
+}

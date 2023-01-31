@@ -1,6 +1,6 @@
 <template>
   <div class="carousel-container">
-    <h1>{{ title }}</h1>
+    <h1 class="carousel-title">{{ title }}</h1>
     <ul class="carousel-list">
       <li v-for="item in data" :style="st" ref="itemRefs">
         <div class="carousel-overlay">
@@ -15,7 +15,7 @@
             <p class="carousel-movie-title">{{ item.name ?? item.title }}</p>
           </div>
         </div>
-        <img :src="item.backdrop" :alt="item.name" />
+        <img :src="item.backdropW500" :alt="item.name" />
       </li>
       <button class="corousel-btn-left" @click="prevPage">
         <CIcon icon="cilChevronLeft" />

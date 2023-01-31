@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Inertia\Inertia;
-use Illuminate\Http\Request;
 use App\Services\TmdbService;
 
 class HomeController extends Controller

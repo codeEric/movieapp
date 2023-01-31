@@ -12,9 +12,13 @@ body {
   @include mix.flex-column;
 }
 
-section {
+.main-layout-section,
+.home-layout-section {
   background-color: var.$bg-color;
   flex: 1;
   color: var.$white;
-  padding: 2rem 4.6rem;
+}
+
+.main-layout-section {
+  @include mix.layout-section-padding;
 }

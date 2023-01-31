@@ -1,9 +1,11 @@
 <template>
   <Header />
 
-  <section class="main-layout-section">
+  <section class="home-layout-section">
     <slot />
   </section>
+
+  <footer></footer>
 </template>
 
 <script setup>
