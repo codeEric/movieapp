@@ -7,6 +7,7 @@ use App\Services\TmdbService;
 use Illuminate\Http\Client\Response;
 
 use App\Services\DataObjects\Movie;
+use Illuminate\Support\Collection;
 
 class MovieResource
 {
@@ -20,41 +21,45 @@ class MovieResource
     $this->apiKey = $apiKey;
   }
 
-  public function getPopular(int $page = 1): Response
+  public function getPopular(int $page = 1): Collection
   {
-    return $this->service->get(
+
+    $data = $this->service->get(
       request: $this->service->buildRequestWithoutToken(),
       url: "/movie/popular",
       page: $page,
       apiKey: $this->apiKey
     );
+
+    return collect($data->json()['results'])->map(fn ($item) => new Movie($item));
   }
 
-  private function getTrending(string $time_window, int $page): Response
+  private function getTrending(string $time_window, int $page): Collection
   {
     if ($time_window === 'day') {
-      return $this->service->get(
+      $data = $this->service->get(
         request: $this->service->buildRequestWithoutToken(),
         url: "/trending/all/{$time_window}",
         page: $page,
         apiKey: $this->apiKey
       );
     } else {
-      return $this->service->get(
+      $data = $this->service->get(
         request: $this->service->buildRequestWithoutToken(),
         url: "/trending/all/{$time_window}",
         page: $page,
         apiKey: $this->apiKey
       );
     }
+    return collect($data->json()['results'])->map(fn ($item) => new Movie($item));
   }
 
-  public function getDailyTrending(int $page = 1): Response
+  public function getDailyTrending(int $page = 1): Collection
   {
     return $this->getTrending('day', $page);
   }
 
-  public function getWeeklyTrending(int $page = 1): Response
+  public function getWeeklyTrending(int $page = 1): Collection
   {
     return $this->getTrending('week', $page);
   }

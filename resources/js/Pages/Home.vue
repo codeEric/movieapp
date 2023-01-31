@@ -1,13 +1,18 @@
 <template>
   <h1>Home</h1>
-  <Carousel title="Trending" :data="trendingMovies" />
   <Carousel title="Popular movies" :data="popularMovies" />
+  <Carousel title="Daily trending" :data="trendingMoviesDaily" />
+  <Carousel title="Weekly trending" :data="trendingMoviesWeekly" />
 </template>
 
 <script setup>
 import Carousel from '../Shared/Carousel.vue';
 
-const props = defineProps({ popularMovies: Object, trendingMovies: Object });
+const props = defineProps({
+  popularMovies: Object,
+  trendingMoviesDaily: Object,
+  trendingMoviesWeekly: Object,
+});
 
 console.log(props.popularMovies);
 
